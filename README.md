@@ -1,6 +1,6 @@
 ---
 title: Text Summarization
-emoji: 📚
+emoji: 🤗
 colorFrom: red
 colorTo: indigo
 sdk: gradio
