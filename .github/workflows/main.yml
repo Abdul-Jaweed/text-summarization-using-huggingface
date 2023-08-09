@@ -10,14 +10,11 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Add remote 
-        env:
-          HF: ${{ secrets.HG }}
-        run: git remote add space https://huggingface.co/spaces/jaweed123/text-summarization
+          lfs: true
       - name: Push to hub
         env:
-          HF: ${{ secrets.HG }}
-        run: git push --force https://huggingface.co/spaces/jaweed123/text-summarization main
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: git push --force https://jaweed123:$HF_TOKEN@huggingface.co/spaces/jaweed123/text-summarization main
